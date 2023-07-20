@@ -55,28 +55,4 @@ client.on("voiceStateUpdate", (oldState, newState) => {
   }
 });
 
-// client.on("voiceStateUpdate", (oldState, newState) => {
-//   const member = newState.member;
-//   const oldChannel = oldState.channel;
-//   const newChannel = newState.channel;
-
-//   // Check if the member joined a voice channel
-//   if (oldChannel === null && newChannel !== null) {
-//     console.log(
-//       `${member.user.tag} joined the voice channel "${newChannel.name}" in ${newChannel.guild.name}.`
-//     );
-//   }
-
-//   // Check if the member moved to a different voice channel
-//   if (
-//     oldChannel !== null &&
-//     newChannel !== null &&
-//     oldChannel.id !== newChannel.id
-//   ) {
-//     console.log(
-//       `${member.user.tag} moved from "${oldChannel.name}" to "${newChannel.name}" in ${newChannel.guild.name}.`
-//     );
-//   }
-// });
-
 client.login(process.env.TOKEN);
