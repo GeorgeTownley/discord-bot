@@ -35,26 +35,6 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     }
   }
 
-    // Connect the bot to the voice channel
-    const connection = joinVoiceChannel({
-      channelId: newChannel.id,
-      guildId: newChannel.guild.id,
-      adapterCreator: newChannel.guild.voiceAdapterCreator,
-    });
-
-    // Play the audio file
-    const audioPlayer = createAudioPlayer({
-      behaviors: {
-        noSubscriber: NoSubscriberBehavior.Pause,
-      },
-    });
-
-    const audioResource = createAudioResource('path/to/your/audio/file.mp3');
-
-    audioPlayer.play(audioResource);
-    connection.subscribe(audioPlayer);
-  }
-
   // Check if the member moved to a different voice channel
   if (
     oldChannel !== null &&
